@@ -1,10 +1,9 @@
 // registration.tsx
-
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import './RegistrationPage.css'; // Make sure to import the registration styles
-
+import axios from 'axios';
 const Registration: React.FC = () => {
   const formik = useFormik({
     initialValues: {
@@ -17,9 +16,23 @@ const Registration: React.FC = () => {
       email: Yup.string().email('Invalid email address').required('Required'),
       password: Yup.string().min(6, 'Password must be at least 6 characters').required('Required'),
     }),
-    onSubmit: (values) => {
+    onSubmit: () => {
       // Handle registration logic here
-      console.log('Form submitted:', values);
+      axios.post("/register",{
+        name: formik.values.name,
+        email: formik.values.email,
+        password: formik.values.password
+      })
+      .then((res)=>{
+        console.log(res);
+        if(res.data.code==0){
+          alert("User Registered");
+          console.log(res);
+        }
+      })
+      .catch((err)=>{
+        console.log(err);
+      })
     },
   });
 
