@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import './LoginPage.css';
 // import { Link } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 const LoginPage: React.FC = () => {
   const formik = useFormik({
     initialValues: {
@@ -17,7 +18,9 @@ const LoginPage: React.FC = () => {
     }),
     onSubmit: (values) => {
       // Your login logic goes here
-      console.log('Form submitted with values:', values);
+      axios.post("/login",{
+        
+      })
     },
   });
 
