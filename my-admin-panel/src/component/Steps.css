@@ -1,0 +1,32 @@
+/* src/components/Step1.css */
+
+/* src/components/Step2.css */
+/* src/components/Step3.css */
+.multi-step-form{
+    margin: 2% 5%;
+    height: 100%;
+    margin-top: 2%;
+    overflow: hidden;
+    margin-bottom: 0.5%;
+    /* color: #fff; */
+}
+.step-content {
+    color: black;
+    label {
+    height: 100%;
+      display: flex;
+      margin-bottom: 0px;
+      overflow: hidden;
+      color: white;
+      /* margin-bottom: 10%; */
+    }
+  
+    input,
+    select {
+      width: 100%;
+      padding: 0px;
+      margin-bottom:0px;
+      box-sizing: border-box;
+    }
+  }
+  
