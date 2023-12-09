@@ -1,5 +1,6 @@
 // src/components/SubmissionTable.tsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './SubmissionTable.css'; // Import the CSS file for styling
 
 const SubmissionTable: React.FC<any> = ({ submissions }) => {
@@ -7,12 +8,24 @@ const SubmissionTable: React.FC<any> = ({ submissions }) => {
   const [startDate, setStartDate] = useState<string>('');
   const [endDate, setEndDate] = useState<string>('');
   
+  // const getdata = async() => {
+  //   const res = await axios.get("/getdata",{
+  //     params:{
+  //       id: 1
+  //     }
+  //   });
+  //   console.log(res);
+  // }
+
+  // useEffect(() => {
+  //   getdata();
+  // }, [])
 
   const filteredSubmissions = submissions?.filter((submission: any) => {
-    const matchSearch = submission.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchSearch = submissions.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchDate =
-      (!startDate || new Date(submission.date) >= new Date(startDate)) &&
-      (!endDate || new Date(submission.date) <= new Date(endDate));
+      (!startDate || new Date(submissions.date) >= new Date(startDate)) &&
+      (!endDate || new Date(submissions.date) <= new Date(endDate));
 
     return matchSearch && matchDate;
   });
