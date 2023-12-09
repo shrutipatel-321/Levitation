@@ -7,7 +7,7 @@ const SubmissionTable: React.FC<any> = ({ submissions }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [startDate, setStartDate] = useState<string>('');
   const [endDate, setEndDate] = useState<string>('');
-  
+
   // const getdata = async() => {
   //   const res = await axios.get("/getdata",{
   //     params:{
@@ -22,10 +22,10 @@ const SubmissionTable: React.FC<any> = ({ submissions }) => {
   // }, [])
 
   const filteredSubmissions = submissions?.filter((submission: any) => {
-    const matchSearch = submissions.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchSearch = submission.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchDate =
-      (!startDate || new Date(submissions.date) >= new Date(startDate)) &&
-      (!endDate || new Date(submissions.date) <= new Date(endDate));
+      (!startDate || new Date(submission.date) >= new Date(startDate)) &&
+      (!endDate || new Date(submission.date) <= new Date(endDate));
 
     return matchSearch && matchDate;
   });
