@@ -6,8 +6,9 @@ const SubmissionTable: React.FC<any> = ({ submissions }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [startDate, setStartDate] = useState<string>('');
   const [endDate, setEndDate] = useState<string>('');
+  
 
-  const filteredSubmissions = submissions.filter((submission: any) => {
+  const filteredSubmissions = submissions?.filter((submission: any) => {
     const matchSearch = submission.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchDate =
       (!startDate || new Date(submission.date) >= new Date(startDate)) &&
@@ -51,7 +52,7 @@ const SubmissionTable: React.FC<any> = ({ submissions }) => {
           </tr>
         </thead>
         <tbody>
-          {filteredSubmissions.map((submission: any) => (
+          {filteredSubmissions?.map((submission: any) => (
             <tr key={submission.id}>
               <td>{submission.name}</td>
               <td>{submission.email}</td>
