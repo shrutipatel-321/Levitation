@@ -19,7 +19,18 @@ const LoginPage: React.FC = () => {
     onSubmit: (values) => {
       // Your login logic goes here
       axios.post("/login",{
-        
+        email: formik.values.email,
+        password: formik.values.password
+      })
+      .then((res)=>{
+        console.log(res);
+        if(res.data.code==0){
+          alert("Logged In");
+          console.log(res);
+        }
+      })
+      .catch((err)=>{
+        console.log(err);
       })
     },
   });
