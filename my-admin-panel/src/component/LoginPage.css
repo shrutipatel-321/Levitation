@@ -38,7 +38,7 @@ html {
     padding: 10px 0;
     font-size: 16px;
     color: #fff;
-    margin-bottom: 20px; /* Adjusted margin */
+    margin-bottom: 2px; /* Adjusted margin */
     border: none;
     border-bottom: 1px solid #fff;
     outline: none;
@@ -170,6 +170,9 @@ html {
     }
   }
  .register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -182,6 +185,14 @@ html {
     margin-top: 40px;
     letter-spacing: 4px;
     background-color: transparent;
+ }
+ .error{
+  color: rgb(192, 73, 73);
+  font-size: small;
+  margin-bottom: 30px;
+ }
+ .loginreg{
+ 
  }
 .register:hover {
     /* background: #03e9f4; */

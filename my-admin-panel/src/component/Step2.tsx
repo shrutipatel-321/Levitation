@@ -14,7 +14,7 @@ const Step2: React.FC<any> = ({ formData, setFormData }) => {
   return (
     <div className="step-content">
       <label>File Upload (PNG or PDF):</label>
-      <input type="file" name="files" accept=".png, .pdf" onChange={handleFileChange} multiple required />
+      <input type="file" id='fileinput' name="files" accept=".png, .pdf" onChange={handleFileChange} multiple required />
 
       {/* Geolocation capturing logic goes here */}
     </div>

@@ -73,12 +73,12 @@ const LoginPage: React.FC = () => {
 
         <button className='register' type="submit">Login</button>
 
-        <a href="#">
+        <a href="#" className='loginreg'>
           <span></span>
           <span></span>
           <span></span>
           <span></span>
-        <Link to="/register">Register</Link>
+        <Link  to="/register">Register</Link>
         </a>
       </form>
     </div>

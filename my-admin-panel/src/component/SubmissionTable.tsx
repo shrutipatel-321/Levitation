@@ -77,6 +77,7 @@ const SubmissionTable: React.FC<any> = ({ submissions }) => {
           ))}
         </tbody>
       </table>
+      <button className='register' type="submit">Add Submission</button>
     </div>
   );
 };

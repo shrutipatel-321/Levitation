@@ -88,7 +88,7 @@ const Step1: React.FC<any> = ({ formData, setFormData }) => {
       <label>Country:</label>
       <input type="text" name="address.country" value={country} onChange={handleChange} required />
 
-      <p>{locationStatus}</p>
+      <p className='location'>{locationStatus}</p>
     </div>
   );
 };

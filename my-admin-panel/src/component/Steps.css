@@ -28,5 +28,15 @@
       margin-bottom:0px;
       box-sizing: border-box;
     }
+    p{
+      color: rgb(211, 66, 66);
+    }
+    #fileinput{
+      padding: 10px;
+      color: white;
+    }
+    .selected-options{
+      color: white;
+    }
   }
   
