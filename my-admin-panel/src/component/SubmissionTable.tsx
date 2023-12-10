@@ -9,7 +9,7 @@ const SubmissionTable: React.FC<any> = ({ submissions }) => {
   const [endDate, setEndDate] = useState<string>('');
   const [data, setData] = useState()
   const getdata = async() => {
-    axios.get(`http://localhost:3000/getsub`)
+    axios.get(`https://levitationbackend-3wav.onrender.com/getsub`)
     .then((res)=>{
       console.log(res);
       setData(res.data);
