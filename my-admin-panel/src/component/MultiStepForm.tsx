@@ -40,7 +40,7 @@ const MultiStepForm: React.FC = () => {
   const handleStepSubmit = () => {
     if (currentStep === 3) {
       // TODO: Replace the log statement with actual submission logic
-      axios.post("http://localhost:3000/submit-form",{
+      axios.post("https://levitationbackend-3wav.onrender.com/submit-form",{
         name: formData.name,
         email: formData.email,      
       })
