@@ -18,7 +18,7 @@ const Registration: React.FC = () => {
     }),
     onSubmit: () => {
       // Handle registration logic here
-      axios.post("https://levitationbackend-3wav.onrender.com/register",{
+      axios.post("http://localhost:3000/register",{
         name: formik.values.name,
         email: formik.values.email,
         password: formik.values.password
