@@ -1,5 +1,6 @@
 // src/components/MultiStepForm.tsx
 import React, { useState } from 'react';
+import axios from 'axios';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
@@ -38,8 +39,24 @@ const MultiStepForm: React.FC = () => {
 
   const handleStepSubmit = () => {
     if (currentStep === 3) {
-      console.log('Form submitted:', formData);
       // TODO: Replace the log statement with actual submission logic
+      axios.post("http://localhost:3000/submit-form",{
+        name: formData.name,
+        email: formData.email,      
+      })
+      .then((res)=>{
+        if(res.status==201){
+          alert("Form Submitted");
+          window.location.href = '/submission';
+          console.log(res);
+        }
+        else{
+
+        }
+      })
+      .catch((err)=>{
+        console.log(err);
+      })
       // You can make an API call or perform other actions here
     } else {
       handleNext();

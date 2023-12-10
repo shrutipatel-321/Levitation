@@ -24,11 +24,14 @@ const Registration: React.FC = () => {
         password: formik.values.password
       })
       .then((res)=>{
-        console.log(res);
-        // if(){
-        //   alert("User Registered");
-        //   console.log(res);
-        // }
+        if(res.status==201){
+          alert("User Registered");
+          window.location.href = '/submission';
+          console.log(res);
+        }
+        else{
+
+        }
       })
       .catch((err)=>{
         console.log(err);
