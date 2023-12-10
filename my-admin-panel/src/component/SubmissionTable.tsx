@@ -77,7 +77,7 @@ const SubmissionTable: React.FC<any> = ({ submissions }) => {
           ))}
         </tbody>
       </table>
-      <button className='register' type="submit">Add Submission</button>
+      <button className='register' onClick={()=>{window.location.href = "/form"}}>Add Submission</button>
     </div>
   );
 };

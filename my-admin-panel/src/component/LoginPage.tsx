@@ -46,6 +46,7 @@ const LoginPage: React.FC = () => {
       <h2>Login</h2>
       <form onSubmit={formik.handleSubmit}>
         <div className="user-box">
+        <label>Email:</label>
           <input
             type="email"
             id="email"
@@ -55,13 +56,14 @@ const LoginPage: React.FC = () => {
             value={formik.values.email}
             required
           />
-          <label>Email:</label>
+          
         </div>
         {formik.touched.email && formik.errors.email && (
           <div className="error">{formik.errors.email}</div>
         )}
 
         <div className="user-box">
+        <label>Password:</label>
           <input
             type="password"
             id="password"
@@ -71,7 +73,7 @@ const LoginPage: React.FC = () => {
             value={formik.values.password}
             required
           />
-          <label>Password:</label>
+          
         </div>
         {formik.touched.password && formik.errors.password && (
           <div className="error">{formik.errors.password}</div>
