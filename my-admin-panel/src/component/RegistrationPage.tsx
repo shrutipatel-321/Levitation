@@ -29,12 +29,18 @@ const Registration: React.FC = () => {
           window.location.href = '/submission';
           console.log(res);
         }
+        else if (res.status === 400 && res.data.code === 1) {
+          // User already exists
+          alert("User already exists. Redirecting to login page.");
+          window.location.href = '/login';
+        }
         else{
-
+          alert("Internal Server Error: Unable to register user");
         }
       })
       .catch((err)=>{
         console.log(err);
+        alert("Error while registering: Please try again later");
       })
     },
   });
