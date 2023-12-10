@@ -56,6 +56,7 @@ const MultiStepForm: React.FC = () => {
       })
       .catch((err)=>{
         console.log(err);
+        alert("Error submitting form: Please try again later");
       })
       // You can make an API call or perform other actions here
     } else {

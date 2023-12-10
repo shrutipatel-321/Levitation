@@ -27,10 +27,16 @@ const LoginPage: React.FC = () => {
         if(res.data.code==0){
           alert("Logged In");
           console.log(res);
+          window.location.href = '/form';
+        }
+        else {
+          // Wrong credentials
+          alert("Wrong credentials. Please check your email and password.");
         }
       })
       .catch((err)=>{
         console.log(err);
+        alert("Error while Login: Please try again later");
       })
     },
   });
