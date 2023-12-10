@@ -7,21 +7,23 @@ const SubmissionTable: React.FC<any> = ({ submissions }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [startDate, setStartDate] = useState<string>('');
   const [endDate, setEndDate] = useState<string>('');
+  const [data, setData] = useState()
+  const getdata = async() => {
+    axios.get(`http://localhost:3000/getsub`)
+    .then((res)=>{
+      console.log(res);
+      setData(res.data);
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  }
 
-  // const getdata = async() => {
-  //   const res = await axios.get("/getdata",{
-  //     params:{
-  //       id: 1
-  //     }
-  //   });
-  //   console.log(res);
-  // }
+  useEffect(() => {
+    getdata();
+  }, [])
 
-  // useEffect(() => {
-  //   getdata();
-  // }, [])
-
-  const filteredSubmissions = submissions?.filter((submission: any) => {
+  const filteredSubmissions = data?.filter((submission: any) => {
     const matchSearch = submission.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchDate =
       (!startDate || new Date(submission.date) >= new Date(startDate)) &&
