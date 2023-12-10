@@ -77,7 +77,7 @@ const LoginPage: React.FC = () => {
           <div className="error">{formik.errors.password}</div>
         )}
 
-        <button className='register' type="submit">Login</button>
+        <button className='login' type="submit">Login</button>
 
         <a href="#" className='loginreg'>
           <span></span>
