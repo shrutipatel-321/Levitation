@@ -18,17 +18,17 @@ const Registration: React.FC = () => {
     }),
     onSubmit: () => {
       // Handle registration logic here
-      axios.post("/register",{
+      axios.post("http://localhost:3000/register",{
         name: formik.values.name,
         email: formik.values.email,
         password: formik.values.password
       })
       .then((res)=>{
         console.log(res);
-        if(res.data.code==0){
-          alert("User Registered");
-          console.log(res);
-        }
+        // if(){
+        //   alert("User Registered");
+        //   console.log(res);
+        // }
       })
       .catch((err)=>{
         console.log(err);
