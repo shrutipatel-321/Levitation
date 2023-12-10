@@ -47,15 +47,15 @@ html {
   }
   
   .registration-box .user-box label {
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 0;
+    left: 0; */
     padding: 15px 0;
     font-size: 16px;
     color: #03e9f4;
     pointer-events: none;
     transition: 0.5s;
-    top: -20px;
+    /* top: -20px; */
   }
   
 

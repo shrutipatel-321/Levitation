@@ -50,6 +50,7 @@ const Registration: React.FC = () => {
       <h2>Register</h2>
       <form onSubmit={formik.handleSubmit}>
         <div className="user-box">
+        <label htmlFor="name">Name:</label>
           <input
             type="text"
             id="name"
@@ -59,13 +60,14 @@ const Registration: React.FC = () => {
             value={formik.values.name}
             required
           />
-          <label htmlFor="name">Name:</label>
+          
           {formik.touched.name && formik.errors.name ? (
             <div className="error">{formik.errors.name}</div>
           ) : null}
         </div>
 
         <div className="user-box">
+        <label htmlFor="email">Email:</label>
           <input
             type="email"
             id="email"
@@ -75,7 +77,7 @@ const Registration: React.FC = () => {
             value={formik.values.email}
             required
           />
-          <label htmlFor="email">Email:</label>
+          
           {formik.touched.email && formik.errors.email ? (
             <div className="error">{formik.errors.email}</div>
           ) : null}
