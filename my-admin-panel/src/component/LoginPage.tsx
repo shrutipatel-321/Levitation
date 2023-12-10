@@ -18,7 +18,7 @@ const LoginPage: React.FC = () => {
     }),
     onSubmit: (values) => {
       // Your login logic goes here
-      axios.post("http://localhost:3000/login",{
+      axios.post("https://levitationbackend-3wav.onrender.com/login",{
         email: formik.values.email,
         password: formik.values.password
       })
